@@ -9,7 +9,7 @@ request(url, function (error, response, body) {
   if (!error && response.statusCode == 200) {
         var tweetResponse = JSON.parse(body);
         tweetResponse.results.forEach(function(tweet) {
-            db.fp_tweets_chi_05.findOne({id_str:tweet.id_str},function(err,atweet){
+            db.collections[0].findOne({id_str:tweet.id_str},function(err,atweet){
                 if (err) {
 
                 }
@@ -20,7 +20,7 @@ request(url, function (error, response, body) {
                         console.log(dateFormat(new Date(),"yyyymmdd h:MM:ss")+" Adding Tweet: "+tweet.id_str) // Print the tweet.
                         tweet.jDate = new Date(tweet.created_at);
                         var encodedText =
-                        db.fp_tweets_chi_05.insert(tweet,function(err) {
+                        db.collections[0].insert(tweet,function(err) {
                                 if (err) {
                                         console.log(dateformat(new Date(),"yyyymmdd h:MM:ss")+" Error: "+err);
                                 }
