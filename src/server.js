@@ -1,5 +1,5 @@
 var dateFormat = require("dateformat");
-var conf = require("./config/config.js");
+var conf = require("../config/config.js");
 var collections = [conf.destinationCollection];
 var db = require("mongojs").connect(conf.mongodb, collections);
 var request = require('request');
