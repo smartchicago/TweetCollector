@@ -47,7 +47,6 @@ db.collection(conf.destinationCollection).find({},{id_str:1}).sort({id:-1}).limi
 		});
 	}
 });
-/*Fix this. How do we know all the work is done?*/
 setTimeout(function(){
   process.exit(0);
 }, 10000);
