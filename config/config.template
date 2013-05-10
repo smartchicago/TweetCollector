@@ -1,5 +1,5 @@
-// Register a new application at http://dev.twitter.com
-// Tracklytics
+// Rename to config.js prior to executing....
+
 module.exports = {
    mongodb: 			'mongodb://<user>:<password>@<address>:<port>/<db>'
    destinationCollection: 	'<collection>'
