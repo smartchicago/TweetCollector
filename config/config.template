@@ -1,5 +1,7 @@
-// Rename to config.js prior to executing....
+// Register a new application at http://dev.twitter.com
+// for the Oauth credentials listed below.
 
+// Rename to config.js prior to executing....
 module.exports = {
    mongodb: 			'mongodb://<user>:<password>@<address>:<port>/<db>'
    destinationCollection: 	'<collection>'
@@ -7,4 +9,12 @@ module.exports = {
    radius: 			'<radius>'
    pagesToReturn: 		'<pagesToReturn>
    searchPhrase:		'<escaped search string>'  /*food%20poison*/
+
+    twitter: {
+        consumerKey: '<consumer key from http://dev.twitter.com>'
+      , consumerSecret:  '<consumer secret from http://dev.twitter.com>'
+      , accessTokenKey:  '<access token key from http://dev.twitter.com>'
+      , accessTokenSecret: '<access token secret key from http://dev.twitter.com>'
+    },
+
 }
