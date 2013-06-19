@@ -3,13 +3,29 @@
 
 // Rename to config.js prior to executing....
 module.exports = {
-   mongodb: 			'mongodb://<user>:<password>@<address>:<port>/<db>'
-   destinationCollection: 	'<collection>'
-   boundingBox: 		'<latitude>,<longitude>'
-   radius: 			'<radius>'
-   pagesToReturn: 		'<pagesToReturn>
-   searchPhrase:		'<escaped search string>'  /*food%20poison*/
 
+/*Mongo params*/
+   mongodb: 			'mongodb://<user>:<password>@<address>:<port>/<db>'
+   destinationCollection: 	'<collection>'			/*collection name in Mongo*/
+
+/*Use ONLY ONE of the geospatial filter request or stream request below*/
+
+/*Use these for a geospatial filter request*/
+/*start*/
+   searchCenter: 		'<latitude>,<longitude>'	/*center of search*/
+   searchRadius: 		'<radius>'			/*search radius in km*/
+   searchPages: 		'<pagesToReturn>'		/*number of pages of tweets to return*/
+   searchFilterOn:		'<escaped search string>'  	/*food%20poison*/
+   searchLatest:		true	/*true or false, use the max id_str in Mongo to request only newer tweets from Twitter*/
+/*end*/
+
+/*Use these for a stream request. Bounding box optional*/
+/*start*/
+   boundingBox:               ['<long1>','<lat1>','<long2>','<lat2>']		/* e.g. [ '-87.96', '41.644', '-87.40', '42.04' ] */
+   streamFilterOn:	      ['<srch1>','<srch2>',...'<srchn>']		/* e.g. ['cubs','sox','bears','hawks','bulls'] */
+/*end*/
+
+/*Twitter API Keys */
     twitter: {
         consumerKey: '<consumer key from http://dev.twitter.com>'
       , consumerSecret:  '<consumer secret from http://dev.twitter.com>'
