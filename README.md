@@ -7,4 +7,8 @@ This code was written to support Smart Chicago's [Foodborne](http://foodborne.sm
 ## Setup
 
 Fill out the credentials and parameters in the sample config/config.template and rename to config.js before executing.
+
+## Copyright
+
+Copyright (c) 2013 Smart Chicago Collaborative. Released under the MIT License.
  
